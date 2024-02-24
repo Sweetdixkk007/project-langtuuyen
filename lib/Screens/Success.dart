@@ -48,7 +48,7 @@ class _SuccessState extends State<Success> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 80),
             child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+              "123 kuy",
               style: GoogleFonts.dmSans(
                   fontSize: 10,
                   fontWeight: FontWeight.w300,
