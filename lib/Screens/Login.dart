@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jobspot/Screens/ForgotPass.dart';
+import 'package:jobspot/Screens/Home.dart';
 import 'package:jobspot/Screens/Register.dart';
 import 'package:jobspot/Widgets/Pass_field.dart';
 import 'package:jobspot/Widgets/Text_field.dart';
@@ -147,7 +148,11 @@ class _LoginState extends State<Login> {
                 0.6, // Adjust the width as needed
             child: ElevatedButton(
               onPressed: () {
-                // Your button onPressed logic here
+                Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.fade,
+                            child: homeScreen()));// Your button onPressed logic here
               },
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 4, 6, 126), // Background color

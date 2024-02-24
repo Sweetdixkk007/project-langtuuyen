@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jobspot/Screens/Register.dart';
-import 'package:jobspot/Widgets/Pass_field.dart';
 import 'package:jobspot/Widgets/Text_field.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -19,19 +18,19 @@ class _ForgotPassState extends State<ForgotPass> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 239, 247, 255),
+        backgroundColor: const Color.fromARGB(255, 239, 247, 255),
         elevation: 0,
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 239, 247, 255),
+      backgroundColor: const Color.fromARGB(255, 239, 247, 255),
       body: Center(
         child: Column(children: [
           const SizedBox(
@@ -102,13 +101,13 @@ class _ForgotPassState extends State<ForgotPass> {
               Navigator.push(
                   context,
                   PageTransition(
-                      type: PageTransitionType.fade, child: Register()));
+                      type: PageTransitionType.fade, child: const Register()));
             },
             child: Container(
               height: MediaQuery.of(context).size.height * 0.05,
               width: MediaQuery.of(context).size.width * 0.8,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 4, 6, 126),
+                color: const Color.fromARGB(255, 4, 6, 126),
                 borderRadius: BorderRadius.circular(5),
               ),
               child:
@@ -118,7 +117,7 @@ class _ForgotPassState extends State<ForgotPass> {
                   style: GoogleFonts.dmSans(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromARGB(255, 255, 255, 255),
+                    color: const Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ]),
@@ -140,7 +139,7 @@ class _ForgotPassState extends State<ForgotPass> {
                 style: GoogleFonts.dmSans(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
             ]),
