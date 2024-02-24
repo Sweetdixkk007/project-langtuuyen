@@ -19,32 +19,18 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 239, 247, 255),
+      backgroundColor: Color.fromARGB(255, 250, 162, 53),
       body: Center(
         child: Column(children: [
           const SizedBox(
             height: 80,
           ),
           Text(
-            "Welcome Back",
+            "กรุณาเข้าสู่ระบบ",
             style: GoogleFonts.dmSans(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
                 color: const Color.fromARGB(255, 3, 4, 90)),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80),
-            child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-              style: GoogleFonts.dmSans(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w300,
-                  color: const Color.fromARGB(255, 3, 4, 90)),
-              textAlign: TextAlign.center,
-            ),
           ),
           const SizedBox(
             height: 50,
@@ -129,7 +115,7 @@ class _LoginState extends State<Login> {
                       style: GoogleFonts.dmSans(
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
-                          color: Color.fromARGB(150, 3, 4, 90)),
+                          color: Color.fromARGB(255, 3, 4, 90)),
                     ),
                   ]),
                 ),
@@ -146,8 +132,8 @@ class _LoginState extends State<Login> {
                     style: GoogleFonts.dmSans(
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
-                        color: Color.fromARGB(255, 1, 2, 49),
-                        decoration: TextDecoration.underline),
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        ),
                   ),
                 ),
               ],
@@ -243,8 +229,8 @@ class _LoginState extends State<Login> {
                   style: GoogleFonts.dmSans(
                       fontSize: 12,
                       fontWeight: FontWeight.w300,
-                      color: Colors.amber[700],
-                      decoration: TextDecoration.underline),
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                      ),
                 ),
               ),
             ],

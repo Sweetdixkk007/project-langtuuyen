@@ -9,7 +9,7 @@ class SecondSplash extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 239, 247, 255),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 3, 4, 90),
+        backgroundColor: Color.fromARGB(255, 250, 162, 53),
         child: const Icon(Icons.arrow_forward_ios),
         onPressed: () {
           Navigator.pushReplacement(
@@ -20,30 +20,14 @@ class SecondSplash extends StatelessWidget {
       ),
       body: Column(children: [
         const SizedBox(
-          height: 30,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Text(
-                "JobSpot",
-                style: GoogleFonts.dmSans(
-                    fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 20,
+          height: 50,
         ),
         Container(
           height: MediaQuery.of(context).size.height * 0.5,
           width: MediaQuery.of(context).size.width * 0.8,
           decoration: const BoxDecoration(
               image: DecorationImage(
-            image: AssetImage("lib/assets/person_vector.png"),
+            image: AssetImage("lib/assets/sp.png"),
             filterQuality: FilterQuality.high,
           )),
         ),
@@ -58,7 +42,7 @@ class SecondSplash extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Say Gex",
+                    "ยินดีต้อนรับ!!!",
                     style: GoogleFonts.dmSans(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -69,10 +53,10 @@ class SecondSplash extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Blow Job",
+                    "เพราะการกิน คือเรื่องสำคัญ",
                     style: GoogleFonts.dmSans(
-                      decoration: TextDecoration.underline,
-                      color: Colors.amber[700],
+                  
+                      color: Color.fromARGB(255, 250, 162, 53),
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                     ),
@@ -82,7 +66,7 @@ class SecondSplash extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Here!",
+                    "พบกับสูตรอาหารมากมาย!",
                     style: GoogleFonts.dmSans(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
@@ -97,7 +81,7 @@ class SecondSplash extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      "ช้างเย็ดควายเย็ดแม่",
+                      "มาเป็นส่วนหนึ่งกับพวกเราได้ในคอมมูนิตี้",
                       style: GoogleFonts.dmSans(
                         fontSize: 15,
                         fontWeight: FontWeight.w300,

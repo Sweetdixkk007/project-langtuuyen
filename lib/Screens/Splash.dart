@@ -27,15 +27,15 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Color.fromARGB(255, 250, 162, 53),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.2500,
-            width: MediaQuery.of(context).size.width * 0.2500,
+            height: MediaQuery.of(context).size.height * 0.8,
+            width: MediaQuery.of(context).size.width * 0.8,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("lib/assets/22222.png"),
+                    image: AssetImage("lib/assets/icon.png"),
                     filterQuality: FilterQuality.high)),
           ),
         ]),
