@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jobspot/Screens/ForgotPass.dart';
 import 'package:jobspot/Screens/Home.dart';
+
 import 'package:jobspot/Screens/Register.dart';
 import 'package:jobspot/Widgets/Pass_field.dart';
 import 'package:jobspot/Widgets/Text_field.dart';
@@ -131,10 +132,10 @@ class _LoginState extends State<Login> {
                   child: Text(
                     "Forgot password?",
                     style: GoogleFonts.dmSans(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        ),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                   ),
                 ),
               ],
@@ -149,10 +150,11 @@ class _LoginState extends State<Login> {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade,
-                            child: homeScreen()));// Your button onPressed logic here
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.fade,
+                        child:
+                            HomeScreen())); // Your button onPressed logic here
               },
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 4, 6, 126), // Background color
@@ -232,10 +234,10 @@ class _LoginState extends State<Login> {
                 child: Text(
                   "Sign Up",
                   style: GoogleFonts.dmSans(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                      ),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
                 ),
               ),
             ],
