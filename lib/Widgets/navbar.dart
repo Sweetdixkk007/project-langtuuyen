@@ -30,7 +30,7 @@ class NavBar extends StatelessWidget {
           ),
           Text(
             "Star Platinum",
-            style: GoogleFonts.lato(
+            style: GoogleFonts.dmSans(
               fontSize: 16,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,

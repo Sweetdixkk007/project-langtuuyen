@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jobspot/Widgets/Pass_field.dart';
+import 'package:jobspot/Widgets/My_Button.dart';
 import 'package:jobspot/Widgets/Text_field.dart';
 
 class Success extends StatefulWidget {

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "598010897564",
-    "project_id": "jobspot-31b7b",
-    "storage_bucket": "jobspot-31b7b.appspot.com"
+    "project_number": "104432303063",
+    "project_id": "loginandregister-f057b",
+    "storage_bucket": "loginandregister-f057b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:598010897564:android:955aca8ea5bed10cb6f959",
+        "mobilesdk_app_id": "1:104432303063:android:23759f3a983fc5b7bfa992",
         "android_client_info": {
-          "package_name": "com.company.app_jobspot"
+          "package_name": "com.example.jobspot"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBHR_Z3qKTCn_-pv9asU3thVbGEAUrWtZM"
+          "current_key": "AIzaSyC-_M4SR8dXnuUcaO1zXdnL1ozFXovtrrc"
         }
       ],
       "services": {

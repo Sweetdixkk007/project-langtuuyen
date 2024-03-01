@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jobspot/Screens/ForgotPass.dart';
 import 'package:jobspot/Screens/Home.dart';
-
 import 'package:jobspot/Screens/Register.dart';
-import 'package:jobspot/Widgets/Pass_field.dart';
+import 'package:jobspot/Widgets/My_Button.dart';
 import 'package:jobspot/Widgets/Text_field.dart';
+
 import 'package:page_transition/page_transition.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -16,12 +19,24 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  bool? isChecked = false;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  signInWithEmail() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      print("Login successfully");
+    } on FirebaseAuthException catch (e) {
+      print('Failed with error code: ${e.code}');
+      print(e.message);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 250, 162, 53),
+      backgroundColor: const Color.fromARGB(255, 250, 162, 53),
       body: Center(
         child: Column(children: [
           const SizedBox(
@@ -56,7 +71,11 @@ class _LoginState extends State<Login> {
             height: 15,
           ),
           Text_field(
-            Maintext: "Enter email",
+            
+            controller: emailController,
+            labelText: "",
+            obscureText: false,
+            hintText: "Enter your name.",          
           ),
           const SizedBox(
             height: 20,
@@ -79,139 +98,51 @@ class _LoginState extends State<Login> {
           const SizedBox(
             height: 15,
           ),
-          PassTextField(
-            MainText: "Enter Password",
+          Text_field(
+            controller: passwordController,
+            labelText: '',
+            obscureText: true,
+            hintText: "Enter your password.",          
           ),
           const SizedBox(
-            height: 15,
+            height: 5,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                  child: Row(children: [
-                    Transform.scale(
-                      scale: 0.7,
-                      child: Checkbox(
-                        value: isChecked,
-                        activeColor: const Color.fromARGB(255, 3, 4, 90),
-                        onChanged: (newBool) {
-                          setState(() {
-                            isChecked = newBool;
-                          });
-                        },
-                        side: const BorderSide(
-                          color: Color.fromARGB(103, 3, 4, 90),
-                          width: 1,
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Forgot Password?',
+                          style: GoogleFonts.dmSans(
+                            textStyle: Theme.of(context).textTheme.displaySmall,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 0,
-                    ),
-                    Text(
-                      "Remember me",
-                      style: GoogleFonts.dmSans(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
-                          color: Color.fromARGB(255, 3, 4, 90)),
-                    ),
-                  ]),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade,
-                            child: ForgotPass()));
-                  },
-                  child: Text(
-                    "Forgot password?",
-                    style: GoogleFonts.dmSans(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
+                    ],
                   ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                0.6, // Adjust the width as needed
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.fade,
-                        child:
-                            HomeScreen())); // Your button onPressed logic here
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 4, 6, 126), // Background color
-              ),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.05,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text(
-                    "LOGIN",
-                    style: GoogleFonts.dmSans(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
+                  const SizedBox(height: 20),
+                  MyButton(
+                    onTap: signInWithEmail,
+                    hinText: "Sign In",
                   ),
-                ]),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                ],
               ),
             ),
-          ),
           const SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.05,
-            width: MediaQuery.of(context).size.width * 0.6,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 207, 207, 255),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Container(
-                height: 30,
-                width: 30,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("lib/assets/google.png"),
-                        filterQuality: FilterQuality.high)),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(
-                "Sign in with Google",
-                style: GoogleFonts.dmSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  color: Color.fromARGB(255, 4, 6, 126),
-                ),
-              ),
-            ]),
-          ),
-          const SizedBox(
-            height: 20,
+            height: 0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -221,7 +152,7 @@ class _LoginState extends State<Login> {
                 style: GoogleFonts.dmSans(
                   fontSize: 12,
                   fontWeight: FontWeight.w300,
-                  color: Color.fromARGB(255, 4, 6, 126),
+                  color: const Color.fromARGB(255, 4, 6, 126),
                 ),
               ),
               GestureDetector(
@@ -229,7 +160,7 @@ class _LoginState extends State<Login> {
                   Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade, child: Register()));
+                          type: PageTransitionType.fade, child: const Register()));
                 },
                 child: Text(
                   "Sign Up",

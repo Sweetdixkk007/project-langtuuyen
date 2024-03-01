@@ -1,40 +1,39 @@
 import 'package:flutter/material.dart';
 
 class Text_field extends StatelessWidget {
-  final String Maintext;
+  const Text_field(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      required this.obscureText,
+      required this.labelText});
 
-  Text_field({required this.Maintext});
+  final controller;
+  final String hintText;
+  final bool obscureText;
+  final String labelText;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.06,
-        width: MediaQuery.of(context).size.width * 0.8,
-        decoration: const BoxDecoration(boxShadow: [
-          BoxShadow(
-            blurRadius: 30,
-            spreadRadius: 1,
-            color: Color.fromARGB(17, 3, 4, 90),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 25.0),
+      child: TextFormField(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          hintText: hintText,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 45.0, vertical: 20.0),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.blue),
+            gapPadding: 10,
           ),
-        ]),
-        child: TextField(
-          textAlign: TextAlign.start,
-          textInputAction: TextInputAction.none,
-          obscureText: false,
-          keyboardType: TextInputType.emailAddress,
-          textAlignVertical: TextAlignVertical.center,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(
-                vertical: 8, horizontal: 8), // Adjust the padding
-            fillColor: Color.fromARGB(255, 252, 252, 252),
-            filled: true,
-            labelText: Maintext,
-            floatingLabelBehavior: FloatingLabelBehavior.never,
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(10),
-            ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Color.fromARGB(255, 0, 255, 38)),
+            gapPadding: 10,
           ),
         ),
       ),
